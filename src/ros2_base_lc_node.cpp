@@ -1,4 +1,5 @@
 // This is a modified version of the original code. The former one was designed for kuka robots.
+
 // The original copyright is kept as below. 
 // Copyright 2020 Gergely Kovács
 //

@@ -1,3 +1,5 @@
+# This is a modified version of the original code. The original one was designed for general UR robots.
+
 # Copyright (c) 2021 PickNik, Inc.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -98,11 +100,6 @@ def launch_setup(context, *args, **kwargs):
     output_recipe_filename = PathJoinSubstitution(
         [FindPackageShare("ur_robot_driver"), "resources", "rtde_output_recipe.txt"]
     )
-
-    # if ns.perform(context) == "":
-    #     tf_prefix = ""
-    # else:
-    #     tf_prefix = ns.perform(context) + "_"
 
     robot_description_content = Command(
         [
@@ -221,18 +218,6 @@ def launch_setup(context, *args, **kwargs):
         ]
     )
 
-    # control_node = Node(
-    #     package="controller_manager",
-    #     executable="ros2_control_node",
-    #     parameters=[
-    #         robot_description,
-    #         update_rate_config_file,
-    #         ParameterFile(initial_joint_controllers, allow_substs=True),
-    #     ],
-    #     output="screen",
-    #     condition=IfCondition(use_fake_hardware),
-    # )
-
     ur_control_node = Node(
         namespace=ns,
         package="ur_robot_driver",
@@ -266,20 +251,7 @@ def launch_setup(context, *args, **kwargs):
         parameters=[{"robot_ip": robot_ip}],
     )
 
-    # tool_communication_node = Node(
-    #     package="ur_robot_driver",
-    #     condition=IfCondition(use_tool_communication),
-    #     executable="tool_communication.py",
-    #     name="ur_tool_comm",
-    #     output="screen",
-    #     parameters=[
-    #         {
-    #             "robot_ip": robot_ip,
-    #             "tcp_port": tool_tcp_port,
-    #             "device_name": tool_device_name,
-    #         }
-    #     ],
-    # )
+
 
     urscript_interface = Node(
         package="ur_robot_driver",
@@ -338,22 +310,16 @@ def launch_setup(context, *args, **kwargs):
                 "ips_ur/controller_manager",
                 "--controller-manager-timeout",
                 controller_spawner_timeout,
-                # "-n",
-                # ns,
+
             ]
             + inactive_flags,
         )
 
     controller_spawner_names = [
-        
-        #"io_and_status_controller",
-        #"speed_scaling_state_broadcaster",
-        #"force_torque_sensor_broadcaster",
+
     ]
     controller_spawner_inactive_names = [
-        "joint_state_broadcaster",
-        #"forward_position_controller"
-        ]
+        "joint_state_broadcaster"        ]
 
     controller_spawners = [controller_spawner(name) for name in controller_spawner_names] + [
         controller_spawner(name, active=False) for name in controller_spawner_inactive_names
@@ -387,11 +353,9 @@ def launch_setup(context, *args, **kwargs):
     )
 
     nodes_to_start = [
-        #control_node,
         ur_control_node,
         robot_manager_node,
         dashboard_client_node,
-        # tool_communication_node,
         controller_stopper_node,
         urscript_interface,
         robot_state_publisher_node,

@@ -1,3 +1,6 @@
+# This is a modified version of the original code. The original one was designed for general KUKA robots.
+
+
 # Copyright 2023 Aron Svastits
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -133,8 +136,6 @@ def launch_setup(context, *args, **kwargs):
             controller_names,
             "-c",
             controller_manager_node,
-            # "-n",
-            # ns,
         ]
         if not activate:
             arg_list.append("--inactive")

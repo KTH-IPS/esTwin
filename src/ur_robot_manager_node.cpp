@@ -1,4 +1,5 @@
 // This is a modified version of the original code. The former one was designed for kuka robots.
+
 // The original copyright is kept as below. 
 // This code is based on the robot_manager_node.cpp from https://github.com/kroshu/kuka_drivers (Aron Svastits)
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -50,7 +51,7 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
 RobotManagerNode::on_configure(const rclcpp_lifecycle::State &)
 {
   // Configure hardware interface
-  // [Modification]: Because UR robots have to activate the hardware automatically, so we have the hardware state change omitted.
+  // [Modification by Zhihao Liu]: Because UR robots have to activate the hardware automatically, so we have the hardware state change omitted.
   // [Note]: The configuration and activatation of UR5 is safe. No motion will occur. 
   // if (!solution_manager_core::changeHardwareState(
   //       change_hardware_state_client_, robot_model_, State::PRIMARY_STATE_INACTIVE))

@@ -69,5 +69,4 @@ def generate_launch_description():
         abb_launch,
         ur_launch,
         kuka_launch
-        #delayed_solution_manager
     ])

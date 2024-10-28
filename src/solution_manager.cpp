@@ -43,17 +43,12 @@ SolutionManagerNode::SolutionManagerNode(): Node("multi_robot_solution_manager")
       "/" + robot_namespace + "/robot_manager/get_state");
   }
 
-   // Create a timer to run solution_establishment() for the first time
-  //  timer_ = this->create_wall_timer(
-  //   2s, std::bind(&SolutionManagerNode::solution_establishment, this));
   solution_establishment();
 }
 
 
 void SolutionManagerNode::solution_establishment()
 {
-  // Stop the timer after the node starts
-  //timer_->cancel();
 
   // Define the specific order of robot namespaces
   std::vector<std::string> ordered_robot_namespaces = {"ips_abb", "ips_kuka", "ips_ur"};

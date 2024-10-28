@@ -1,4 +1,5 @@
 // This is a modified version of the original code. The former one was designed for kuka robots.
+
 // The original copyright is kept as below. 
 // This code is based on the robot_manager_node.cpp from https://github.com/kroshu/kuka_drivers (Aron Svastits)
 // Licensed under the Apache License, Version 2.0 (the "License");
