@@ -63,22 +63,6 @@ def generate_launch_description():
                 }.items()
         )
 
-    # Create the solution_manager node
-    # solution_manager_node = Node(
-    #     package='dtir_solution_manager', 
-    #     executable='solution_manager',  
-    #     name='ips_solution_manager',
-    #     output='screen',
-    #     parameters=[{
-    #         'robot_namespaces': ['ips_abb', 'ips_kuka', 'ips_ur']
-    #     }]
-    # )
-
-    # Optionally delay the start of solution_manager_node to ensure other nodes are up
-    # delayed_solution_manager = TimerAction(
-    #     period=5.0,  # Delay in seconds; adjust as needed
-    #     actions=[solution_manager_node]
-    # )
 
     # Return the LaunchDescription with all nodes
     return LaunchDescription([
