@@ -1,4 +1,5 @@
 # sesTwin
+
 ## Seamless Establishment and Synchronisation of Digital Twins for Multi-robot Manufacturing Systems
 
 Package name: dtir_solution_manager
@@ -17,9 +18,11 @@ The drivers of the industrial robot use in this work are:
 
 *UR: https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver
 
-
 Usage:
-1. $ ros2 launch solution.launch.py
-2. $ ros2 node run dtir_solution_manager solution_manager
 
-For more information, please refer to the paper. 
+1. Install this package or add it into your ROS2 workspace
+2. $ ros2 launch dtir_solution_manager solution.launch.py
+3. $ ros2 node run dtir_solution_manager solution_manager
+4. Follow the instructions from the terminal. It will configure and activate hardware interfaces and controllers in a fixed order: ABB IRB1600, KUKA KR6R700Sixx, and UR5.
+
+For more information, please refer to the paper.
