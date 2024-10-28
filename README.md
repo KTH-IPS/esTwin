@@ -12,7 +12,9 @@ This repository is inspired and based on kuka_drivers (https://github.com/kroshu
 The drivers of the industrial robot use in this work are:
 
 *ABB: https://github.com/PickNikRobotics/abb_ros2
+
 *KUKA: https://github.com/kroshu/kuka_drivers
+
 *UR: https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver
 
 
