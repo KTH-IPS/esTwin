@@ -1,6 +1,6 @@
-# sesTwin
+# esTwin
 
-## Seamless Establishment and Synchronisation of Digital Twins for Multi-robot Manufacturing Systems
+## Establishment and Synchronisation of Digital Twins for Multi-robot Manufacturing Systems
 
 Package name: dtir_solution_manager
 
